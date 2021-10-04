@@ -1,0 +1,97 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-0 py-3">
+  <div class="container-xl">
+    <!-- Logo -->
+    <a class="navbar-brand" href="#">
+      <!-- <img src="https://preview.webpixels.io/web/img/logos/clever-light.svg" class="h-8" alt="..."> -->
+    </a>
+    <!-- Navbar toggle -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Collapse -->
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <!-- Nav -->
+      <div class="navbar-nav mx-lg-auto">
+        <a class="nav-item nav-link active" href="#" aria-current="page">Home</a>
+        <a class="nav-item nav-link" routerLink="/homecourses">Courses</a>
+        <a class="nav-item nav-link" routerLink="/blog">Blog</a>
+        <!-- <a class="nav-item nav-link" routerLink="professor">Professor</a> -->
+        <!-- <a class="nav-item nav-link" routerLink="student">Student</a> -->
+
+      </div>
+      <!-- Right navigation -->
+      <!-- <div class="navbar-nav ms-lg-4">
+        <a class="nav-item nav-link" routerLink="login">Sign in</a>
+      </div> -->
+      <!-- Action -->
+      <div class="d-flex align-items-lg-center mt-3 mt-lg-0">
+      
+          <ul>
+          <li class="nav-item dropdown rounded" >
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color:white;"><i class="bi bi-person-fill me-2"></i>Register</a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" routerLink="/signupteachers" style=" font-size:larger;background-color: yellowgreen;border-radius: 2px;">Teacher</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" routerLink="/signup" style="font-size:larger;">Student</a></li>
+             </ul>
+          </li>
+          </ul>
+      
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<section class="vh-100 bg-image" style="background-image: url('https://itbrief.co.nz/uploads/story/2020/01/17/digital_globe11.jpg');">
+  <br><br><div class=" d-flex align-items-center h-100 ">
+    <div class="container" >
+      <div class="row d-flex justify-content-center align-items-center h-50">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 25px;border-color: blue;">
+            <div class="card-body p-5">
+              <h2 class="text-center mb-5">Log In</h2>
+
+              <form name="form" #f = "ngForm" (ngSubmit)="loginuser()">
+                <div *ngIf="invalidLogin" class="alert alert-danger"> 
+                  Invalid Login! Please try again. 
+                </div>  
+                
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example1cg">Email</label>
+                  <input type="text" id="form3Example1cg" class="form-control form-control-lg"name="email" [(ngModel)]="student.email"  #email="ngModel" [ngClass]="{'invalid-data': email.invalid && f.submitted, 'valid-data': email.valid && f.submitted}" [class.error-border]="email.invalid && f.submitted" pattern="^[a-z0-9.%+]+@[a-z0-9.-]+\.[a-z]{2,4}$" required />
+                  <small style="color: rgb(226, 41, 41); font-weight: bolder;" *ngIf ="email.invalid && f.submitted || email.invalid && email.touched">Invalid Email</small>  
+  
+                  </div>
+         
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example3cg">Password</label>
+                  <input type="password" id="form3Example3cg" class="form-control form-control-lg" name="password" [(ngModel)]="student.password" #password="ngModel"  [ngClass]="{'invalid-data': password.invalid && f.submitted, 'valid-data': password.valid && f.submitted}" [class.error-border]="password.invalid && f.submitted" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%?&])[A-Za-z\d$@$!%?&]{8,}$" required/>
+                  <small style="color: rgb(226, 41, 41); font-weight: bolder; text-align: justify;" *ngIf = "password.invalid && f.submitted || password.invalid && password.touched">Password should contain minimum 8 characters with at least one uppercase, lowercase, special characters & digits.</small>    
+                
+                </div>                  
+
+                <div class="d-flex justify-content-center">
+                  <button type="submit" [disabled]="f.form.invalid" class="btn btn-info">Login</button>
+                </div>
+                
+                <p class="text-center text-muted mt-5 mb-0">Don't have an account? <a href="register">Register</a></p>
+                
+
+              </form>
+            </div>
+            
+          </div>
+          
+        </div>
+        
+      </div>
+     
+
+    </div>
+    
+  </div>
+  
+</section>

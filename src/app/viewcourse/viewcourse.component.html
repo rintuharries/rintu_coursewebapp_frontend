@@ -1,0 +1,90 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-md-auto gap-2">
+        <li class="nav-item rounded">
+          <a class="nav-link active" aria-current="page"  routerLink="/professor/homefaculty" ><i class="bi bi-house-fill me-2"></i>Home</a>
+        </li>
+        <li class="nav-item rounded">
+          <a class="nav-link" routerLink="/professor/course-details"><i class="bi bi-people-fill me-2"></i>Add Course</a>
+        </li>
+        <li class="nav-item rounded">
+          <a class="nav-link" routerLink="/professor/viewcourse"><i class="bi bi-people-fill me-2"></i>View Course</a>
+        </li>
+        <li class="nav-item rounded">
+          <a class="nav-link" routerLink="/professor/studentdetails"><i class="bi bi-people-fill me-2"></i>Student Details</a>
+        </li>
+        <li class="nav-item rounded">
+          <a class="nav-link" routerLink="/"><i class="bi bi-people-fill me-2"></i>Logout</a>
+        </li>
+        <!-- <li><a class="dropdown-item" href="#">Logout</a></li> -->
+
+        <li class="nav-item dropdown rounded">
+          <!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person-fill me-2"></i>Profile</a> -->
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <!-- <li><a class="dropdown-item" href="#">Account</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li> -->
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<section class="vh-200 bg-image" style="background-image: url('https://itbrief.co.nz/uploads/story/2020/01/17/digital_globe11.jpg');">
+    <div>
+      <br><br><br><br><br><br>
+  
+      <div class="card" style="border-radius: 25px;margin-left: 30px; margin-right: 40px;">
+    
+        <div class="card-body p-5" *ngFor="let i of courses;">
+          <form>
+            <div style="width:600px;">
+              <div style="float:left; width: 130px">
+                <a routerLink="/professor/updatecourse" style="background-color:white;border-radius: 30px;text-decoration: none;font-size:x-large;">Edit</a>
+              </div>
+            </div>
+         
+            <br />
+            <br />
+            <br />
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form3Example1cg">Course Name</label>
+              <label type="text" id="form3Example2" class="form-control form-control-lg">{{i.coursetitle}}</label>
+               </div>
+            
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form3Example1cg">Description</label>
+             <p> {{i.description}}</p>
+            </div>
+            <div class="form-outline mb-4">
+            <label class="form-label" for="form3Example3cg">Image</label>
+              <img [src]=i.imageUrl width="300px" height="10px" class="img-thumbnail" alt="">            
+            </div>
+
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form3Example1cg">Duration</label>
+              <label type="text" id="form3Example2" class="form-control form-control-lg">{{i.duration}}</label>
+               </div>
+
+               <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example1cg">Course Fee</label>
+                <label type="text" id="form3Example2" class="form-control form-control-lg">{{i.coursefee}}</label>
+                 </div>
+    
+    <br/>
+
+          </form>
+        </div>
+        </div>
+        </div>
+    </section>  
+  

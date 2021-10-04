@@ -1,0 +1,76 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-md-auto gap-2">
+          <li class="nav-item rounded">
+            <a class="nav-link active" aria-current="page" routerLink="/professor/homefaculty"><i class="bi bi-house-fill me-2"></i>Home</a>
+          </li>
+          <li class="nav-item rounded">
+            <a class="nav-link" routerLink="/professor/course-details"><i class="bi bi-people-fill me-2"></i>Add Courses</a>
+          </li>
+          <li class="nav-item rounded">
+            <a class="nav-link" routerLink="/professor/viewcourse"><i class="bi bi-people-fill me-2"></i>View Courses</a>
+          </li>
+         
+          <li class="nav-item rounded">
+            <a class="nav-link" routerLink="">Logout</a>
+          </li>
+          <li class="nav-item dropdown rounded">
+            <!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person-fill me-2"></i>Profile</a> -->
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <!-- <li><a class="dropdown-item" href="#">Account</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li> -->
+              <!-- <li>
+                <hr class="dropdown-divider">
+              </li> -->
+              <!-- <li><a class="dropdown-item" href="#">Logout</a></li> -->
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="vh-200 bg-image" style="background-image: url('https://itbrief.co.nz/uploads/story/2020/01/17/digital_globe11.jpg')">
+    <br><br><br><br><div class=" align-items-center h-100 ">      
+      <div class="container h-100">        
+        <div class="row d-flex justify-content-center align-items-center h-100">          
+          <div class="col-12 col-md-10">                                                                                                                                  <br>
+   <div class="container-fluid">
+    <h2 style="text-align:center;color: goldenrod;">Student Details</h2>                     
+
+  <div class="row">
+ <div class="col-md-12">
+  <div class="default-table">   
+                        <table>
+                          <thead>
+                            <tr >                              
+                            <th>Student Name</th>
+                            <th>Email id</th>
+                            <th>Course</th>   
+                            <th></th>                          
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor='let course of courseapp'>
+                              <td>{{course.student}}</td>                              
+                              <td>{{course.email}}</td>
+                              <td>{{course.course}}</td>                              
+                             <td><a  routerLink="/course/{{course._id}}">View Details</a></td> 
+                            </tr>                       
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+  </div>
+  </div>
+</div>
+  </div>
+  <br>
+  </section>
